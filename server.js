@@ -8,8 +8,10 @@ dotenv.config();
 connectDB();
 
 const app = express();
-app.use(cors());
-app.use(express.json());
+app.use(cors({
+  origin: ['https://admin-dashboard-eosin-iota-25.vercel.app', 'https://student-app-fawn.vercel.app'],
+  credentials: true
+}));app.use(express.json());
 
 
 app.use('/api/teachers', require('./routes/TeacherRoutes'));
