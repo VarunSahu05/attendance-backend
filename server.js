@@ -9,7 +9,7 @@ connectDB();
 
 const app = express();
 app.use(cors({
-  origin: ['http://admin-dashboard-omega-dun-12.vercel.app', 'http://student-app-six-rho.vercel.app'],
+  origin: ['https://admin-dashboard-omega-dun-12.vercel.app', 'https://student-app-six-rho.vercel.app'],
   credentials: true
 }));
 app.use(express.json());
