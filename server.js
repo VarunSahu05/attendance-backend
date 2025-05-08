@@ -9,7 +9,7 @@ connectDB();
 
 const app = express();
 app.use(cors({
-  origin: ['https://admin-dashboard-eosin-iota-25.vercel.app', 'https://student-app-fawn.vercel.app'],
+  origin: ['http://admin-dashboard-omega-dun-12.vercel.app', 'http://student-app-six-rho.vercel.app'],
   credentials: true
 }));
 app.use(express.json());
