@@ -86,5 +86,13 @@ router.get('/', async (req, res) => {
     }
   });
 
+  // routes/teacherRoutes.js or similar
+router.get('/verify/:id', async (req, res) => {
+  const teacher = await Teacher.findOne({ teacherId: req.params.id });
+  if (!teacher) return res.status(404).json({ valid: false });
+  res.json({ valid: true, subject: teacher.subject });
+});
+
+
 
 module.exports = router;
