@@ -85,4 +85,12 @@ router.get('/student/:roll', async (req, res) => {
   }
 });
 
+// GET /api/attendance/count/:sessionId
+router.get('/count/:sessionId', async (req, res) => {
+  const { sessionId } = req.params;
+  const count = await Attendance.countDocuments({ sessionId });
+  res.json({ count });
+});
+
+
 module.exports = router;

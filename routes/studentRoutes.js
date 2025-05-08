@@ -61,6 +61,13 @@ router.get('/:roll', async (req, res) => {
   student ? res.json(student) : res.status(404).json({ message: 'Student not found' });
 });
 
+// GET /api/students/count/:department
+router.get('/count/:department', async (req, res) => {
+  const { department } = req.params;
+  const count = await Student.countDocuments({ department });
+  res.json({ count });
+});
+
 
 module.exports = router;
 
